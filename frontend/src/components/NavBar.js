@@ -6,6 +6,9 @@ import About from './About.js';
 import Documentation from './Documentation.js';
 import InvalidURL from './InvalidURL.js';
 import Button from '@mui/material/Button';
+import DescriptionIcon from '@mui/icons-material/Description';
+import HomeIcon from '@mui/icons-material/Home';
+import InfoIcon from '@mui/icons-material/Info';
 
 const linkStyle = {textDecoration: 'none'};
 function Layout() {
@@ -15,17 +18,17 @@ function Layout() {
                 <ul>
                     <li>
                         <Link style={linkStyle} to='/'> 
-                            <Button variant="outlined"> Home </Button> 
+                            <Button variant="outlined" startIcon={<HomeIcon />}> Home </Button> 
                         </Link>
                     </li>
                     <li>
                         <Link style={linkStyle} to='about'>
-                            <Button variant="outlined"> About </Button>
+                            <Button variant="outlined" startIcon={<InfoIcon />}> About </Button>
                         </Link>
                     </li>
                     <li>
                         <Link style={linkStyle} to='documentation'>
-                            <Button variant="outlined"> Documentation </Button>
+                            <Button variant="outlined" startIcon={<DescriptionIcon />}> Documentation </Button>
                         </Link>
                     </li>
                 </ul>
