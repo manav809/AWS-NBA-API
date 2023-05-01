@@ -8,7 +8,7 @@ AWS.config.update({
 });
 
 const dynamoClient = new AWS.DynamoDB.DocumentClient();
-const TABLE_NAME = "playerstatsdata";
+const TABLE_NAME = "nbaplayerstats";
 
 async function getPlayers() {
   const params = {
