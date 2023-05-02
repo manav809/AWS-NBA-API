@@ -11,7 +11,8 @@ const classes = {
     paddingTop: "2rem",
   },
   textarea: {
-    resize: "none"
+    resize: "none",
+    padding: "5px"
   }
 };
 function FullWidthTextField() {
