@@ -10,6 +10,9 @@ const classes = {
     justifyContent: "center",
     paddingTop: "2rem",
   },
+  textarea: {
+    resize: "none"
+  }
 };
 function FullWidthTextField() {
   return (
@@ -19,6 +22,7 @@ function FullWidthTextField() {
           sx={{
             width: 500,
             maxWidth: "100%",
+            py: 5,
           }}
         >
           <TextField
@@ -26,12 +30,14 @@ function FullWidthTextField() {
             label="API Call"
             id="fullWidth"
             defaultValue="http://ourapi.com/player/"
+            sx={{ input: { color: "white" } }}
+            color="secondary"
           />
         </Box>
       </div>
       <div>
         <IconButton>
-          <SearchIcon />
+          <SearchIcon style={{color:'white'}}/>
         </IconButton>
       </div>
     </div>
@@ -43,6 +49,8 @@ function Search() {
       <h3 className="App-header">
         <div>Search Player</div>
         <FullWidthTextField />
+        <textarea style={classes.textarea} cols="100" rows="15">
+        </textarea>
       </h3>
     </div>
   );

@@ -3,7 +3,10 @@ import SportsBasketballIcon from "@mui/icons-material/SportsBasketball";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import "../Styles/main.css";
-
+import Button from "@mui/material/Button";
+import PersonSearchIcon from '@mui/icons-material/PersonSearch';
+import HomeIcon from '@mui/icons-material/Home';
+import ArticleIcon from '@mui/icons-material/Article';
 function Navbar() {
   const navRef = useRef();
 
@@ -15,8 +18,21 @@ function Navbar() {
     <header>
       <SportsBasketballIcon />
       <nav ref={navRef}>
-        <Link to="/">Home</Link>
-        <Link to="/Search">Search</Link>
+        <Link to="/">
+          <Button variant="text" sx={{ color: "white" }} startIcon={<HomeIcon />}>
+            Home
+          </Button>
+        </Link>
+        <Link to="/Search">
+          <Button variant="text" sx={{ color: "white" }} startIcon={<PersonSearchIcon />}>
+            Search
+          </Button>
+        </Link>
+        <Link to="/Documentation">
+          <Button variant="text" sx={{ color: "white" }} startIcon={<ArticleIcon />}>
+            Documentation
+          </Button>
+        </Link>
         <button className="nav-btn nav-close-btn" onClick={showNavbar}>
           <FaTimes />
         </button>
