@@ -2,6 +2,8 @@ const express = require("express");
 const { getPlayers, getPlayerById } = require("./dynamo");
 const app = express();
 const port = process.env.PORT || 3001;
+var cors = require('cors');
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("Entry");

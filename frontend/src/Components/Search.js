@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import SearchIcon from "@mui/icons-material/Search";
 import IconButton from "@mui/material/IconButton";
+import axios from "axios";
 const classes = {
   container: {
     display: "flex",
@@ -12,10 +13,22 @@ const classes = {
   },
   textarea: {
     resize: "none",
-    padding: "5px"
-  }
-};
+    padding: "5px",
+  },
+};  
+var player_json; 
 function FullWidthTextField() {
+  const getPlayers = () => {
+    axios
+      .get("http://localhost:3001/players")
+      .then((res) => {
+        player_json = res.data;
+        console.log(player_json)
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div style={classes.container}>
       <div>
@@ -37,8 +50,8 @@ function FullWidthTextField() {
         </Box>
       </div>
       <div>
-        <IconButton>
-          <SearchIcon style={{color:'white'}}/>
+        <IconButton onClick={getPlayers}>
+          <SearchIcon style={{ color: "white" }} />
         </IconButton>
       </div>
     </div>
@@ -50,8 +63,7 @@ function Search() {
       <h3 className="App-header">
         <div>Search Player</div>
         <FullWidthTextField />
-        <textarea style={classes.textarea} cols="100" rows="15">
-        </textarea>
+        <textarea style={classes.textarea} cols="100" rows="15">{player_json}</textarea>
       </h3>
     </div>
   );
