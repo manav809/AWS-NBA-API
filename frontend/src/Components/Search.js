@@ -19,46 +19,55 @@ const classes = {
     padding: "5px",
   },
 };
-var player_json;
-async function getPlayers(textField) {
-  axios
-    .get(`${textField}`)
-    .then((res) => {
-      player_json = JSON.stringify(res.data, null, 4);
-      console.log(player_json);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-}
+// var player_json;
 
 function FullWidthTextField() {
+  async function getPlayers(textField) {
+    axios
+      .get(`${textField}`)
+      .then((res) => {
+        setPlayerJson(JSON.stringify(res.data, null, 4));
+        console.log(playerJson);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   const [textField, setTextField] = useState("http://localhost:3001/players");
+  const [playerJson, setPlayerJson] = useState("");
   return (
-    <div style={classes.container}>
-      <div>
-        <Box
-          sx={{
-            width: 500,
-            maxWidth: "100%",
-            py: 5,
-          }}
-        >
-          <TextField
-            fullWidth
-            label="API Call"
-            id="fullWidth"
-            defaultValue="http://localhost:3001/players"
-            sx={{ input: { color: "white" } }}
-            color="secondary"
-            onChange={(event) => setTextField(event.target.value)}
-          />
-        </Box>
+    <div>
+      <div style={classes.container}>
+        <div>
+          <Box
+            sx={{
+              width: 500,
+              maxWidth: "100%",
+              py: 5,
+            }}
+          >
+            <TextField
+              fullWidth
+              label="API Call"
+              id="fullWidth"
+              defaultValue="http://localhost:3001/players"
+              sx={{ input: { color: "white" } }}
+              color="secondary"
+              onChange={(event) => setTextField(event.target.value)}
+            />
+          </Box>
+        </div>
+        <div>
+          <IconButton onClick={() => getPlayers(textField)}>
+            <SearchIcon style={{ color: "white" }} />
+          </IconButton>
+        </div>
       </div>
       <div>
-        <IconButton onClick={() => getPlayers(textField)}>
-          <SearchIcon style={{ color: "white" }} />
-        </IconButton>
+        <TextareaAutosize
+          style={{ width: 600, height: 300, padding: 4, overflow: "scroll" }}
+          value={`${playerJson}`}
+        />
       </div>
     </div>
   );
@@ -69,9 +78,6 @@ function Search() {
       <h3 className="App-header">
         <div>Search Player</div>
         <FullWidthTextField />
-        <TextareaAutosize
-          style={{ width: 600, height: 300, padding: 4, overflow: "scroll" }}
-        />
       </h3>
     </div>
   );
