@@ -33,7 +33,7 @@ function FullWidthTextField() {
         console.log(err);
       });
   }
-  const [textField, setTextField] = useState("http://localhost:3001/players");
+  const [textField, setTextField] = useState("https://api-n3bp.onrender.com/players");
   const [playerJson, setPlayerJson] = useState("");
   return (
     <div>
@@ -50,7 +50,7 @@ function FullWidthTextField() {
               fullWidth
               label="API Call"
               id="fullWidth"
-              defaultValue="http://localhost:3001/players"
+              defaultValue="https://api-n3bp.onrender.com/players"
               sx={{ input: { color: "white" } }}
               color="secondary"
               onChange={(event) => setTextField(event.target.value)}
