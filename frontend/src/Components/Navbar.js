@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import SportsBasketballIcon from "@mui/icons-material/SportsBasketball";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";
+// import { FaBars, FaTimes } from "react-icons/fa";
 import "../Styles/main.css";
 import Button from "@mui/material/Button";
 import PersonSearchIcon from '@mui/icons-material/PersonSearch';
@@ -11,14 +11,14 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 function Navbar() {
   const navRef = useRef();
 
-  const showNavbar = () => {
-    navRef.current.classList.toggle("responsive_nav");
-  };
+  // const showNavbar = () => {
+  //   navRef.current.classList.toggle("responsive_nav");
+  // };
 
   return (
     <header>
       <div>
-        <SportsBasketballIcon fontSize="large"></SportsBasketballIcon>
+        <SportsBasketballIcon fontSize="large"/>
       </div>
       <div>
         <nav ref={navRef}>
@@ -37,13 +37,13 @@ function Navbar() {
               Documentation
             </Button>
           </Link>
-          <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+          {/* <button className="nav-btn nav-close-btn" onClick={showNavbar}>
             <FaTimes />
-          </button>
+          </button> */}
         </nav>
-        <button className="nav-btn" onClick={showNavbar}>
+        {/* <button className="nav-btn" onClick={showNavbar}>
           <FaBars />
-        </button>
+        </button> */}
       </div>
       <div>
         <Link to="https://github.com/manav809/AWS-NBA-API" target="_blank">
