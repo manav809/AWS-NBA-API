@@ -1,11 +1,11 @@
 import "../App.css";
 
-function Home() {
+function Documentation() {
   return (
     <div className="App">
-      <h3 className="App-header">NBA API Home</h3>
+      <h3 className="App-header">Documentation</h3>
     </div>
   );
 }
 
-export default Home;
+export default Documentation;
