@@ -36,6 +36,13 @@ function FullWidthTextField() {
 
   const [textField, setTextField] = useState("https://api-n3bp.onrender.com/players/");
   const [playerJson, setPlayerJson] = useState("");
+
+  const _handleKeyDown = (event) => {
+    if(event.key === 'Enter'){
+      getPlayers(textField);
+    }
+  }
+
   return (
     <div>
       <div style={classes.container}>
@@ -55,6 +62,7 @@ function FullWidthTextField() {
               sx={{ input: { color: "white" } }}
               color="secondary"
               onChange={(event) => setTextField(event.target.value)}
+              onKeyDown={_handleKeyDown}
             />
           </Box>
         </div>
