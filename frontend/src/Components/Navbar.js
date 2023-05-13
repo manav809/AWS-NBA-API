@@ -6,7 +6,6 @@ import "../Styles/main.css";
 import Button from "@mui/material/Button";
 import PersonSearchIcon from '@mui/icons-material/PersonSearch';
 import HomeIcon from '@mui/icons-material/Home';
-import ArticleIcon from '@mui/icons-material/Article';
 import GitHubIcon from '@mui/icons-material/GitHub';
 function Navbar() {
   const navRef = useRef();
@@ -30,11 +29,6 @@ function Navbar() {
           <Link to="/Search">
             <Button variant="text" sx={{ color: "white" }} startIcon={<PersonSearchIcon />}>
               Search
-            </Button>
-          </Link>
-          <Link to="/Documentation">
-            <Button variant="text" sx={{ color: "white" }} startIcon={<ArticleIcon />}>
-              Documentation
             </Button>
           </Link>
           <button className="nav-btn nav-close-btn" onClick={showNavbar}>
