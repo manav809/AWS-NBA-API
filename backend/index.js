@@ -2,11 +2,12 @@ const express = require("express");
 const { getPlayers, getPlayerById } = require("./dynamo");
 const app = express();
 const port = process.env.PORT || 3001;
-var cors = require('cors');
+var cors = require("cors");
+
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("Entry");
+  res.send("NBA 2023 Season Player Data API");
 });
 
 app.get("/players", async (req, res) => {
@@ -31,5 +32,5 @@ app.get("/players/:id", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log("listening on port 3000");
+  console.log("listening on port 3001");
 });

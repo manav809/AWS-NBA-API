@@ -1,18 +1,13 @@
 const AWS = require("aws-sdk");
-require("dotenv").config();
+const config = require("./config")
 
-AWS.config.update({
-  region: process.env.AWS_DEFAULT_REGION,
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-});
+AWS.config.update(config.AWS_configuration);
 
 const dynamoClient = new AWS.DynamoDB.DocumentClient();
-const TABLE_NAME = "nbaplayerstats";
 
 async function getPlayers() {
   const params = {
-    TableName: TABLE_NAME,
+    TableName: config.AWS_table,
   };
   const players = await dynamoClient.scan(params).promise();
   return players;
@@ -20,7 +15,7 @@ async function getPlayers() {
 
 async function getPlayerById(id) {
   const params = {
-    TableName: TABLE_NAME,
+    TableName: config.AWS_table,
     Key: {
       id,
     },
@@ -30,7 +25,6 @@ async function getPlayerById(id) {
 }
 
 module.exports = {
-  dynamoClient,
   getPlayerById,
   getPlayers,
 };
