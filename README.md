@@ -2,7 +2,7 @@
 ### Cloud Computing Final Project 
 ### Team: Manav Patel, Joshua Ramcharan, Farabi Choudhury,Aksha Patel
 
-### Amplify: https://main.d1sovtlda6yeoj.amplifyapp.com/
+### Amplify: https://main.d16q82mlcgu0sz.amplifyapp.com/
 ### Render API Endpoint: https://api-n3bp.onrender.com
 ### Render API Player Endpoint: https://api-n3bp.onrender.com/players/
 ### Render API Player By ID Endpoint: https://api-n3bp.onrender.com/players/307
