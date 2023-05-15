@@ -7,7 +7,7 @@ var cors = require("cors");
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("NBA 2023 Season Player Data API");
+  res.send("Cloud Computing Final Project: Manav, Farabi, Joshua, Aksha. NBA 2023 Season Player Data API");
 });
 
 app.get("/players", async (req, res) => {
